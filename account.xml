@@ -1,0 +1,9 @@
+<tryton>
+    <data depends="account" noupdate="1">
+        <record model="ir.cron" id="cron_account_update">
+            <field name="interval_number" eval="1"/>
+            <field name="interval_type">days</field>
+            <field name="method">nantic.account.update|update</field>
+        </record>
+    </data>
+</tryton>

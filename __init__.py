@@ -3,6 +3,7 @@
 from trytond.cache import BaseCache
 from trytond.pool import Pool
 
+from . import account
 from . import account_product
 from . import invoice
 from . import ir
@@ -21,6 +22,11 @@ def register():
         ir.SequenceStrict,
         ir.ModelField,
         ir.Queue,
+        module='nantic_common', type_='model')
+    Pool.register(
+        account.Cron,
+        account.NanticAccountUpdate,
+        depends=['account'],
         module='nantic_common', type_='model')
     Pool.register(
         invoice.Invoice,
