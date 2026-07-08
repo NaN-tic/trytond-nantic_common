@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<tryton>
+    <data depends="purchase">
+        <record model="ir.model.button-res.group"
+            id="purchase.purchase_manual_button_group_purchase">
+            <field name="active" eval="False"/>
+        </record>
+        <record model="ir.model.button-res.group"
+            id="purchase.purchase_manual_button_group_account">
+            <field name="active" eval="False"/>
+        </record>
+
+        <record model="ir.model.button-res.group"
+            id="purchase_manual_button_group_manual_invoice_allowed">
+            <field name="button" ref="purchase.purchase_manual_invoice_button"/>
+            <field name="group" ref="manual_invoice_allowed"/>
+        </record>
+    </data>
+</tryton>

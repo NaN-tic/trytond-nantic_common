@@ -1,0 +1,15 @@
+Installing
+==========
+
+Prerequisites
+-------------
+
+ * see setup.py file
+
+Installation
+------------
+
+Once you've downloaded and unpacked the source release, enter the
+directory where the archive was unpacked, and run:
+
+    python setup.py install

@@ -1,0 +1,5 @@
+<data>
+    <xpath expr="//field[@name='type']" position="replace_attributes">
+        <field name="type" widget="many2one"/>
+    </xpath>
+</data>

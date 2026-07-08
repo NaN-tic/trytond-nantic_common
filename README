@@ -1,0 +1,21 @@
+nantic_common
+=============
+
+Shared overrides and small cross-module customizations used by NaN-tic
+modules.
+
+Installing
+----------
+
+See INSTALL
+
+
+License
+-------
+
+See LICENSE
+
+Copyright
+---------
+
+See COPYRIGHT

@@ -1,0 +1,11 @@
+#
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "model:res.group,name:manual_invoice_allowed"
+msgid "Manual Invoice Allowed"
+msgstr "Permiso para facturar manualmente"
+
+msgctxt "selection:party.configuration,identifier_types:"
+msgid "Foreign Identifier Without Validation"
+msgstr "Identificador extranjero sin validación"

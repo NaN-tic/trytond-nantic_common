@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<tryton>
+    <data depends="sale">
+        <record model="ir.model.button-res.group"
+            id="sale.sale_manual_invoice_button_group_sale">
+            <field name="active" eval="False"/>
+        </record>
+        <record model="ir.model.button-res.group"
+            id="sale.sale_manual_invoice_button_group_account">
+            <field name="active" eval="False"/>
+        </record>
+
+        <record model="ir.model.button-res.group"
+            id="sale_manual_button_group_manual_invoice_allowed">
+            <field name="button" ref="sale.sale_manual_invoice_button"/>
+            <field name="group" ref="manual_invoice_allowed"/>
+        </record>
+    </data>
+</tryton>

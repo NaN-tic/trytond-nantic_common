@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <record model="res.group" id="manual_invoice_allowed">
+            <field name="name">Manual Invoice Allowed</field>
+        </record>
+        <record model="res.user-res.group"
+            id="user_admin_manual_invoice_allowed">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="manual_invoice_allowed"/>
+        </record>
+    </data>
+</tryton>
