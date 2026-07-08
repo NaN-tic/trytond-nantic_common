@@ -9,3 +9,7 @@ msgstr "Permís per facturar manualment"
 msgctxt "selection:party.configuration,identifier_types:"
 msgid "Foreign Identifier Without Validation"
 msgstr "Identificador estranger sense validació"
+
+msgctxt "selection:ir.cron,method:"
+msgid "Update Account Template Records"
+msgstr "Actualitza els registres de la plantilla del compte"
