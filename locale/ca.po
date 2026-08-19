@@ -6,6 +6,10 @@ msgctxt "model:res.group,name:manual_invoice_allowed"
 msgid "Manual Invoice Allowed"
 msgstr "Permís per facturar manualment"
 
+msgctxt "model:ir.action,name:act_credit_notes_form"
+msgid "Credit Notes"
+msgstr "Abonaments"
+
 msgctxt "selection:party.configuration,identifier_types:"
 msgid "Foreign Identifier Without Validation"
 msgstr "Identificador estranger sense validació"
