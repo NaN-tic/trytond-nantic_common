@@ -4,6 +4,19 @@ nantic_common
 Shared overrides and small cross-module customizations used by NaN-tic
 modules.
 
+Configuration
+-------------
+
+The ``TRYTOND_NANTIC_CONNECTION__WORKER_FUNCTIONS`` environment variable
+restricts the functions that a queue worker may execute. Its value is a
+pipe-separated list of ``model:method`` entries, for example::
+
+    nantic.agent:run|nantic.chat.conversation:run_in_background
+
+When the variable is defined, any queue entry whose function is not listed is
+rejected at execution time. An empty value rejects every function. When the
+variable is not defined, workers keep the unrestricted legacy behaviour.
+
 Installing
 ----------
 

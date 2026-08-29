@@ -13,6 +13,8 @@ from trytond.transaction import Transaction
 WORKER_QUEUES = config.get('nantic_connection', 'worker_queues', default='')
 WORKER_DEFAULT_QUEUE = config.get('nantic_connection',
     'worker_default_queue', default='')
+WORKER_FUNCTIONS = config.get('nantic_connection', 'worker_functions',
+    default=None)
 queues = WORKER_QUEUES.split('|')
 QUEUE_NAME_RULES = {}
 for queue in queues:
@@ -20,6 +22,14 @@ for queue in queues:
     if len(queue_params) == 3:
         model, method, queue_name = queue_params
         QUEUE_NAME_RULES[(model, method)] = queue_name
+
+ALLOWED_WORKER_FUNCTIONS = None
+if WORKER_FUNCTIONS is not None:
+    ALLOWED_WORKER_FUNCTIONS = set()
+    for function in WORKER_FUNCTIONS.split('|'):
+        function_params = [x.strip() for x in function.split(':')]
+        if len(function_params) == 2 and all(function_params):
+            ALLOWED_WORKER_FUNCTIONS.add(tuple(function_params))
 
 
 class Replace(Function):
@@ -223,3 +233,11 @@ class Queue(ModelView, metaclass=PoolMeta):
         if not name:
             name = 'default'
         return super().push(name, data, scheduled_at, expected_at)
+
+    def run(self):
+        function = (self.data.get('model'), self.data.get('method'))
+        if (ALLOWED_WORKER_FUNCTIONS is not None
+                and function not in ALLOWED_WORKER_FUNCTIONS):
+            raise PermissionError(
+                'Queue function "%s:%s" is not allowed' % function)
+        return super().run()
