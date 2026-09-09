@@ -39,6 +39,7 @@ def register():
     Pool.register(
         party.Configuration,
         party.Party,
+        party.ContactMechanism,
         depends=['party'],
         module='nantic_common', type_='model')
     Pool.register(
